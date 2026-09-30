@@ -1,0 +1,218 @@
+Q1.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="name" onmouseover="makeItBig()" >Yash Sharma</div>
+    <h1 id="bigname"></h1>
+    <script>
+        //Create div tag and type your name
+//       On mouse over copy your name in to h1 tag
+        function makeItBig(){
+            let x =document.getElementById("name");
+            document.getElementById("bigname").innerHTML = x.innerHTML;
+
+
+        }
+       
+    </script>
+</body>
+</html>
+
+
+Q2- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter your text : <input type="text" id="name1"><br>
+    Enter other text : <input type="text" id="name2"><br>
+    <input type="checkbox" id="cheker" onclick="copymethod()">Please tick here to copy your text and paste it in another
+
+
+    <script>
+        //Create 2 textarea and one checkbox
+//Onclick of check box it should copy address from one text area to another
+        function copymethod(){
+            let x = document.getElementById("name1");
+            //document.getElementById("name2").value = x.value;
+            let y = document.getElementById("name2");
+            //document.getElementById("name1").value=z;
+            let z ="";
+            z=x.value;
+            x.value=y.value;
+            y.value=z;
+
+
+
+
+           
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+3.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: aqua; color: navy; font-size: larger;" id="convert" onmouseover="copykarlo()">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero quaerat quo incidunt fuga dolores obcaecati delectus ad deserunt voluptates! Assumenda, eligendi deserunt dolor molestiae soluta quo illo voluptatem at placeat.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, officia ad obcaecati rerum fugiat modi eos. Cum placeat, aut facere voluptatibus non voluptates expedita quo quam repellendus nemo impedit debitis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat neque cum esse quo quasi tenetur itaque, odio laborum laboriosam libero nulla aliquam inventore quam officiis necessitatibus eius labore nam?
+    </div>
+    <p id="normal"></p>
+    <script>
+        function copykarlo(){
+            let x = document.getElementById("convert");
+            document.getElementById("normal").innerText = x.innerText;
+
+
+
+
+        }
+    </script>
+</body>
+</html>
+
+
+Q4.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter your password : <input type="password" id="mainpass"><br>
+    Reenter your password : <input type="password" id="dupepass"><br>
+    <input type="button" value="Submit" onclick="checkPass()">
+    <p span style="color: red;" id="alert"></p>
+    <script>
+        //  Create 2 text box and button
+//Enter password ---------
+//Reenter password----------
+//If both value not same give error message in span tag in red color
+        function checkPass(){
+            let x = document.getElementById("mainpass");
+            let y = document.getElementById("dupepass");
+
+
+            if (x.value != y.value){
+                 document.getElementById("alert").innerText="Passwords do not match";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+
+Q5.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--   Q1. create 2 textbox and create a button on click do sum of two value entered by user -->
+ 
+<body>
+    Enter the number : <input type="text" id="num1">
+    Enter other number : <input type="text" id="num2">
+    <input type="button" value="Submit" onclick="dosum()">
+    <p id="answer"></p>
+
+
+    <script>
+        function dosum(){
+            let x = document.getElementById("num1").value;
+            let y = document.getElementById("num2").value;
+            let z = parseInt(x) + parseInt(y);
+            document.getElementById("answer").innerText=z;
+        }
+    </script>
+</body>
+</html>
+
+Q6.<!-- using this shit  <p id=“pp”> hello<b>bye</b></p> Using DOM and  read “bye” value and display in div tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pp">hello <b>bye</b></p>
+    <div id="display"></div>
+
+
+    <script>
+        let x = document.getElementById("pp");
+        document.getElementById("display").innerHTML = x.childNodes[1].childNodes[0].nodeValue;
+    </script>
+</body>
+</html>
+
+
+
+Q7 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .red {
+            color: red;
+        }
+
+
+        .blue {
+            color: blue;
+        }
+
+
+        .green{
+            color: green;
+        }
+    </style>
+    <input type="radio" name="color" onclick="changeColour('red')">Red
+    <input type="radio" name="color" onclick="changeColour('blue')">Blue
+    <input type="radio" name="color" onclick="changeColour('green')">Green
+
+
+
+
+    <p id="para">This will change colours</p>
+
+
+    <script>
+        function changeColour(color){
+        let x = document.getElementById("para")
+       // x.classList.remove("red" , "blue" , "green");
+        x.classList.add(color)
+    }
+    </script>
+</body>
+</html>
+
+
+
